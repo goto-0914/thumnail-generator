@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useRef } from 'react';
 import './App.css';
+const width = 800;
+const height = 450;
 
 function App() {
+  const canvasRef = useRef(null);
+  useEffect(() => {
+    const canvas: any = canvasRef.current;
+    const ctx: CanvasRenderingContext2D = canvas.getContext('2d');
+    ctx.fillRect(0, 0, 100, 100);
+    ctx.save();
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h3>画像生成</h3>
+      <h4>生成</h4>
+      <canvas className="canvas" ref={canvasRef} width="800" height="450" />
     </div>
   );
 }
