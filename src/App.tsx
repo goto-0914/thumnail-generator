@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div>
-      <h3>画像生成</h3>
+      <h3>Awesome Thumnail Generator</h3>
       <form>
         <label>
           タイトル
