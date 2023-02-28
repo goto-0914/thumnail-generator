@@ -6,7 +6,7 @@ const HEIGHT = 450;
 function App() {
   const canvasRef = useRef(null);
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
     const title = (event.target as any).title.value;
     const category = (event.target as any).category.value;
