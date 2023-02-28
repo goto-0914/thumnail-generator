@@ -1,29 +1,10 @@
-import React, { FormEvent, useEffect, useRef, useState } from 'react';
+import React, { FormEvent, useRef } from 'react';
 import './App.css';
 const WIDTH = 800;
 const HEIGHT = 450;
 
 function App() {
   const canvasRef = useRef(null);
-  const [title, setTitle] = useState('');
-
-  useEffect(() => {
-    // const canvas: any = canvasRef.current;
-    // const ctx: CanvasRenderingContext2D = canvas.getContext('2d');
-    // const gradient = ctx.createLinearGradient(0, 0, WIDTH, HEIGHT);
-    // gradient.addColorStop(0, 'red');
-    // gradient.addColorStop(1, 'purple');
-    // ctx.fillStyle = gradient;
-    // ctx.fillRect(0, 0, WIDTH, HEIGHT);
-    // document.fonts.ready.then(() => {
-    //   ctx.fillStyle = 'white';
-    //   ctx.font = '100px Poppins';
-    //   ctx.fillText(title, 30, 110);
-    // });
-    // ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
-    // ctx.fillRect(0, 270, WIDTH, 100);
-    // ctx.save();
-  }, []);
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
