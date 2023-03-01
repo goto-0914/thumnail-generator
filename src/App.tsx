@@ -1,10 +1,11 @@
-import React, { FormEvent, useRef } from 'react';
+import React, { FormEvent, useRef, useState } from 'react';
 import './App.css';
 const WIDTH = 800;
 const HEIGHT = 450;
 
 function App() {
   const canvasRef = useRef(null);
+  const [href, setHref] = useState();
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
@@ -56,6 +57,8 @@ function App() {
     ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
     ctx.fillRect(0, 270, WIDTH, 100);
     ctx.save();
+
+    setHref(canvas.toDataURL('image/jpeg', 0.75));
   };
 
   return (
@@ -82,6 +85,9 @@ function App() {
         <button type="submit">生成</button>
       </form>
       <canvas className="canvas" ref={canvasRef} width="800" height="450" />
+      <a href={href} download="image.jpg">
+        保存する！！
+      </a>
     </div>
   );
 }
