@@ -21,7 +21,7 @@ function App() {
         gradient.addColorStop(0, '#61DAFB');
         gradient.addColorStop(1, '#124574');
         break;
-      case 'ReactNative':
+      case 'React Native':
         gradient.addColorStop(0, '#124574');
         gradient.addColorStop(1, '#61DAFB');
         break;
@@ -50,8 +50,10 @@ function App() {
     document.fonts.ready.then(() => {
       ctx.fillStyle = 'white';
       ctx.textAlign = 'center';
-      ctx.font = '36px Poppins';
+      ctx.font = '30px Poppins';
       ctx.fillText(title, 400, 335);
+      ctx.font = 'bold 90px Poppins';
+      ctx.fillText(category, 400, 250);
     });
 
     ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
@@ -73,7 +75,7 @@ function App() {
           カテゴリ
           <select name="category" id="category">
             <option value=""></option>
-            <option value="ReactNative">ReactNative</option>
+            <option value="React Native">React Native</option>
             <option value="React">React</option>
             <option value="Web">Web</option>
             <option value="Laravel">Laravel</option>
